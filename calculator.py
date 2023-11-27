@@ -11,7 +11,7 @@ def multiply(x, y):
     """ Multiply function """
     return x * y
 
-def Divide(x, y):
+def divide(x, y):
     """ Divide function """
     if y == 0:
         raise ValueError('Cannot divide by zero!')
