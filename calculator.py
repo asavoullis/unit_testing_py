@@ -37,6 +37,19 @@ def modulus(x, y):
         raise ValueError('Cannot calculate modulus with zero!')
     return x % y
 
+def floor_division(x, y):
+    """ Floor Division function """
+    if y == 0:
+        raise ValueError('Cannot perform floor division by zero!')
+    return x // y
+
+def remainder(x, y):
+    """ Remainder function """
+    if y == 0:
+        raise ValueError('Cannot calculate remainder with zero!')
+    return x % y
+
+
 if __name__ == "__main__":
     # Example usage
     result_add = add(5, 3)
