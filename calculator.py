@@ -28,14 +28,8 @@ def square_root(x):
     return x ** 0.5
 
 def absolute_value(x):
-    """ Absolute value function"""
+    """ Absolute value function or modulus """
     return abs(x)
-
-def modulus(x, y):
-    """ Modulus function """
-    if y == 0:
-        raise ValueError('Cannot calculate modulus with zero!')
-    return x % y
 
 def floor_division(x, y):
     """ Floor Division function """
@@ -44,7 +38,7 @@ def floor_division(x, y):
     return x // y
 
 def remainder(x, y):
-    """ Remainder function """
+    """ Remainder function or modulo """
     if y == 0:
         raise ValueError('Cannot calculate remainder with zero!')
     return x % y

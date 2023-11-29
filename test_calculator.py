@@ -31,12 +31,40 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(calculator.divide(-1, -1), 1)
         self.assertEqual(calculator.divide(5, 2), 2.5)
 
+    def test_divide_raises_error(self):
+        # self.assertRaises(ValueError, calculator.divide, 10, 0)
+        """ alterative way """
+        with self.assertRaises(ValueError):
+            calculator.divide(10, 0)
+
     def test_floor_division(self):
         self.assertEqual(calculator.floor_division(10, 3), 3)
         self.assertEqual(calculator.floor_division(-10, 3), -4)
         self.assertEqual(calculator.floor_division(5, 2), 2)
+    
+    def test_floor_division_raises_error(self):
+        # self.assertRaises(ValueError, calculator.floor_division, 10, 0)
+        with self.assertRaises(ValueError):
+            calculator.floor_division(10, 0)
 
+    def test_power(self):
+        self.assertEqual(calculator.power(2, 3), 8)
+        self.assertEqual(calculator.power(5, 0), 1)
+        self.assertEqual(calculator.power(5, 1), 5)
+        self.assertEqual(calculator.power(5, -1), 1/5)
 
+    def test_square_root(self):
+        self.assertEqual(calculator.square_root(25), 5)
+        self.assertEqual(calculator.square_root(0), 0)
+
+        with self.assertRaises(ValueError):
+            calculator.square_root(-1)
+    
+    def test_absolute_value(self):
+        self.assertEqual(calculator.absolute_value(10), 10)
+        self.assertEqual(calculator.absolute_value(-5), 5)
+        self.assertEqual(calculator.absolute_value(0), 0)
+        
 
 if __name__ == '__main__':
     # now it can be run normally with this:
