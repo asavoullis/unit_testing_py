@@ -6,7 +6,8 @@ import calculator
 
 class TestCalculator(unittest.TestCase):
 
-# https://docs.python.org/3/library/unittest.html    
+# https://docs.python.org/3/library/unittest.html
+# https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug 
 
     def test_add(self):
         # result = calculator.add(10, 5)
