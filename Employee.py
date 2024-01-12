@@ -75,14 +75,16 @@ if __name__ == "__main__":
     employee = Employee("John", "Doe", 50000)
 
     # Initial employee details
-    print("Initial Pay:", employee.first)   
-    print("Initial Pay:", employee.last) 
-    print("Initial Full Name:", employee.fullname)   # Output: Initial Full Name: John Doe
+    print("Initial Name:", employee.first)   
+    print("Last Name (Surname):", employee.last) 
+    print("Full Name:", employee.fullname)   # Output: Full Name: John Doe
     print("Initial Pay:", employee.pay)              # Output: Initial Pay: 50000
     print("")
 
     # __repr__ and __str__
-    print(repr(employee))  # Employee('John', 'Doe', 50000)
+    print(repr(employee))  # Employee('John', 'Doe', 50000, 'John.Doe@email.com')")
+    a = repr(employee)
+    print(type(a))
     print(str(employee))   # John Doe - John.Doe@email.com      
 
     # __add__
