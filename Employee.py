@@ -1,3 +1,5 @@
+import requests
+
 class Employee:
     """ A simple employee class """
 
@@ -50,6 +52,14 @@ class Employee:
 
     def __lt__(self, other):
         return self.pay < other.pay
+    
+    def monthly_schedule(self, month):
+        """ intended to fail so we I can do a mock test """
+        response = requests.get(f'http://company.com/{self.last}/{month}')
+        if response.ok:
+            return response.text
+        else:
+            return 'Bad Response!'
 
 if __name__ == "__main__":
     # Example usage
