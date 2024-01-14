@@ -6,6 +6,7 @@ class TestEmployee(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        """ this basically means that we are working with a class rather than the instance of the class like self """
         print('setupClass')
 
     @classmethod
