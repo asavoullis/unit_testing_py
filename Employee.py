@@ -54,7 +54,16 @@ class Employee:
         return self.pay < other.pay
     
     def monthly_schedule(self, month):
-        """ intended to fail so we I can do a mock test """
+        """
+        Intended to fail so I can do a mock test 
+        
+        The information from that website is something that I would want to mock 
+        because I don't want the success of our tests to depend on that website being up
+        
+        I only care if the get method was called with the correct URL and that the code
+        behaves correctly whether the response is okay or not okay
+        """
+        # pulls an employee's schedule for a given month
         response = requests.get(f'http://company.com/{self.last}/{month}')
         if response.ok:
             return response.text
