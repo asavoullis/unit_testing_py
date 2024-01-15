@@ -57,13 +57,20 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.emp_2.pay, 63000)
 
     def test_repr(self):
+        print('test_repr')
         self.assertEqual(repr(self.emp_1), "Employee('Corey', 'Schafer', 50000, 'Corey.Schafer@email.com')")
         self.assertEqual(repr(self.emp_2), "Employee('Sue', 'Smith', 60000, 'Sue.Smith@email.com')")
 
     def test_str(self):
+        print('test_str')
         self.assertEqual(str(self.emp_1), 'Corey Schafer - $50000 - Corey.Schafer@email.com')
         self.assertEqual(str(self.emp_2), 'Sue Smith - $60000 - Sue.Smith@email.com')
 
+    def test_add(self):
+        print('test_add')
+        total = self.emp_1 + self.emp_2
+
+        self.assertEqual(total, 110000)
     
     """ let's say we have a function that goes to a website and pulls down some information """
 
