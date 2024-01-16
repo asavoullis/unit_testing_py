@@ -31,18 +31,18 @@ class Employee:
         return self.pay + other.pay 
 
     def attribute_length(self, attribute='fullname'):
-        attribute_lower = attribute.lower()
+        att = attribute.lower()
 
-        if attribute_lower == 'name':
+        if att == 'name' or att == 'first':
             return len(self.first)
-        elif attribute_lower == 'fullname':
+        elif att == 'fullname':
             return len(self.fullname)
-        elif attribute_lower in ['surname', 'last']:
+        elif att in ['surname', 'last']:
             return len(self.last)
-        elif attribute_lower == 'email':
+        elif att == 'email':
             return len(self.email)
         else:
-            raise ValueError("Invalid attribute. Use 'name', 'fullname', 'surname', 'last', 'email'.")
+            raise ValueError("Invalid attribute. [Please type 'name', 'first', 'fullname', 'surname', 'last' or 'email'.")
     
     def give_promotion(self, percentage):
         self.pay = int(self.pay * (1 + percentage / 100))

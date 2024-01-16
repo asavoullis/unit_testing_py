@@ -72,6 +72,29 @@ class TestEmployee(unittest.TestCase):
 
         self.assertEqual(total, 110000)
     
+    def test_attribute_length(self):
+        self.assertEqual(self.emp_1.attribute_length('name'), 5)
+        self.assertEqual(self.emp_1.attribute_length('name'), len(self.emp_1.first))
+        self.assertEqual(self.emp_2.attribute_length('first'), 3)
+        self.assertEqual(self.emp_2.attribute_length('first'), len(self.emp_2.first))
+
+        self.assertEqual(self.emp_1.attribute_length('fullname'), 13)
+        self.assertEqual(self.emp_1.attribute_length('fullname'), len(self.emp_1.fullname))
+
+        self.assertEqual(self.emp_1.attribute_length('surname'), 7)
+        self.assertEqual(self.emp_2.attribute_length('surname'), len(self.emp_2.last))
+
+        self.assertEqual(self.emp_1.attribute_length('last'), 7)
+        self.assertEqual(self.emp_1.attribute_length('last'), len(self.emp_1.last))
+        
+        self.assertEqual(self.emp_1.attribute_length('email'), len(self.emp_1.email))
+        self.assertEqual(self.emp_1.attribute_length('email'), len(self.emp_1.first)+len(self.emp_1.last)+len(".@gmail.com"))
+        self.assertEqual(self.emp_1.attribute_length('email'), 23)
+
+        with self.assertRaises(ValueError):
+            self.emp_1.attribute_length('invalid_attribute')
+
+
     """ let's say we have a function that goes to a website and pulls down some information """
 
 if __name__ == '__main__':
