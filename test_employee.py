@@ -94,6 +94,24 @@ class TestEmployee(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.emp_1.attribute_length('invalid_attribute')
 
+    def test_give_promotion(self):
+        self.emp_1.give_promotion(10)
+        self.assertEqual(self.emp_1.pay, 55000)
+
+        self.emp_2.give_promotion(20)
+        self.assertEqual(self.emp_2.pay, 72000)
+
+        with self.assertRaises(ValueError):
+            self.emp_1.give_promotion(-5)
+
+    def test_eq(self):
+        self.assertTrue(self.emp_1 == self.emp_1)
+        self.assertFalse(self.emp_1 == self.emp_2)
+
+    def test_lt(self):
+        self.assertTrue(self.emp_1 < self.emp_2)
+        self.assertFalse(self.emp_2 < self.emp_1)
+        self.assertFalse(self.emp_1 < self.emp_1)
 
     """ let's say we have a function that goes to a website and pulls down some information """
 

@@ -45,7 +45,10 @@ class Employee:
             raise ValueError("Invalid attribute. [Please type 'name', 'first', 'fullname', 'surname', 'last' or 'email'.")
     
     def give_promotion(self, percentage):
-        self.pay = int(self.pay * (1 + percentage / 100))
+        if percentage < 0:
+            raise ValueError("Percentage cannot be negative for promotions.")
+        else:
+            self.pay = int(self.pay * (1 + percentage / 100))
 
     def __eq__(self, other):
         return self.pay == other.pay
