@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 from Employee import Employee
 
 
@@ -113,7 +114,34 @@ class TestEmployee(unittest.TestCase):
         self.assertFalse(self.emp_2 < self.emp_1)
         self.assertFalse(self.emp_1 < self.emp_1)
 
-    """ let's say we have a function that goes to a website and pulls down some information """
+    
+    def test_monthly_schedule(self):
+        """ 
+        We can use patch as a decorator or as a context manager 
+        This will allow us to mock an object during a test 
+        and then that object is automatically restored after the test is run.
 
+        In this example I'll use patch as a context manager
+        """
+        # within patch I pass what I want to mock ( in this case request.get of the employee module )
+        with patch('Employee.requests.get') as mocked_get:
+            # settung the return value of ok to True
+            mocked_get.return_value.ok = True
+            # setting the return text value 
+            mocked_get.return_value.text = 'Success'
+
+            schedule = self.emp_1.monthly_schedule('May')
+            # checking to see if the mocked_get was called with the correct url
+            mocked_get.assert_called_with('http://company.com/Schafer/May')
+            self.assertEqual(schedule, 'Success')
+
+            # Test a failed response
+            mocked_get.return_value.ok = False
+
+            schedule = self.emp_2.monthly_schedule('June')
+            mocked_get.assert_called_with('http://company.com/Smith/June')
+            self.assertEqual(schedule, 'Bad Response!')
+
+  
 if __name__ == '__main__':
     unittest.main()

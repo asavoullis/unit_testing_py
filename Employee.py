@@ -59,7 +59,9 @@ class Employee:
     def monthly_schedule(self, month):
         """
         Intended to fail so I can do a mock test 
-        
+    
+        So let's say we have a function that goes to a website and pulls down some information 
+
         The information from that website is something that I would want to mock 
         because I don't want the success of our tests to depend on that website being up
         
@@ -68,7 +70,9 @@ class Employee:
         """
         # pulls an employee's schedule for a given month
         response = requests.get(f'http://company.com/{self.last}/{month}')
+        # if it returns ok as true then:
         if response.ok:
+            # we will get back a response.text
             return response.text
         else:
             return 'Bad Response!'
