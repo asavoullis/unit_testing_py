@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from Employee import Employee
+from src.employee import Employee
 
 
 class TestEmployee(unittest.TestCase):
@@ -135,7 +135,7 @@ class TestEmployee(unittest.TestCase):
         In this example I'll use patch as a context manager
         """
         # within patch I pass what I want to mock ( in this case request.get of the employee module )
-        with patch("Employee.requests.get") as mocked_get:
+        with patch("employee.requests.get") as mocked_get:
             # settung the return value of ok to True
             mocked_get.return_value.ok = True
             # setting the return text value

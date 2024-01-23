@@ -1,13 +1,14 @@
-import unittest 
-import calculator
+import unittest
+import src.calculator as calculator
 
-# python -m unittest test_calculator.py 
+# python -m unittest test_calculator.py
 # (4 dots)
+
 
 class TestCalculator(unittest.TestCase):
 
-# https://docs.python.org/3/library/unittest.html
-# https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug 
+    # https://docs.python.org/3/library/unittest.html
+    # https://docs.python.org/3/library/unittest.html#unittest.TestCase.debug
 
     def test_add(self):
         # result = calculator.add(10, 5)
@@ -34,7 +35,7 @@ class TestCalculator(unittest.TestCase):
 
     def test_divide_raises_error(self):
         # self.assertRaises(ValueError, calculator.divide, 10, 0)
-        """ alterative way """
+        """alterative way"""
         with self.assertRaises(ValueError):
             calculator.divide(10, 0)
 
@@ -42,7 +43,7 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(calculator.floor_division(10, 3), 3)
         self.assertEqual(calculator.floor_division(-10, 3), -4)
         self.assertEqual(calculator.floor_division(5, 2), 2)
-    
+
     def test_floor_division_raises_error(self):
         # self.assertRaises(ValueError, calculator.floor_division, 10, 0)
         with self.assertRaises(ValueError):
@@ -52,7 +53,7 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(calculator.power(2, 3), 8)
         self.assertEqual(calculator.power(5, 0), 1)
         self.assertEqual(calculator.power(5, 1), 5)
-        self.assertEqual(calculator.power(5, -1), 1/5)
+        self.assertEqual(calculator.power(5, -1), 1 / 5)
 
     def test_square_root(self):
         self.assertEqual(calculator.square_root(25), 5)
@@ -60,13 +61,13 @@ class TestCalculator(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             calculator.square_root(-1)
-    
+
     def test_absolute_value(self):
         self.assertEqual(calculator.absolute_value(10), 10)
         self.assertEqual(calculator.absolute_value(-5), 5)
         self.assertEqual(calculator.absolute_value(0), 0)
-        
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     # now it can be run normally with this:
     unittest.main()
