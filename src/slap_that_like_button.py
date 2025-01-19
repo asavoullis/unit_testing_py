@@ -1,12 +1,6 @@
 import enum
 
 
-# class Color(enum.Enum):
-#     RED = 1
-#     GREEN = 2
-#     BLUE = 3
-
-
 class LikeState(enum.Enum):
     empty = enum.auto()
     liked = enum.auto()
@@ -38,25 +32,15 @@ def slaps_many(state: LikeState, slaps: str) -> LikeState:
     for slap in slaps:
         slap = slap.lower()
         if slap == "l":
-            state = slap_like(slap)
+            state = slap_like(state)
         elif slap == "d":
-            state = slap_dislike(slap)
+            state = slap_dislike(state)
         else:
             raise ValueError("invalid slap")
     return state
 
 
 def main():
-    # # Moved Enum member access and comparison inside main()
-    # print(Color.RED)  # Color.RED
-    # print(Color.GREEN.name)  # 'GREEN'
-    # print(Color.BLUE.value)  # 3
-    # print()
-
-    # if Color.RED == Color(1):
-    #     print("Colors match!")  # Will print this because 1 corresponds to Color.RED
-
-    # print()
     example = LikeState
     print(example.empty)
     print(example.empty.name)
