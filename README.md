@@ -10,18 +10,18 @@ The project is organized as follows:
 Unit_Testing_Repository/
 |
 ├── src/
-│   ├── Employee.py
-│   ├── Calculator.py
-│   ├── Find_anagram.py
-│   ├── slap_button.py
+│   ├── employee.py
+│   ├── calculator.py
+│   ├── find_anagram.py
+│   ├── slap_that_like_button.py
 │   └── colors.py
 |
 ├── tests/
-│   ├── Test_calculator.py
-│   ├── Test_employee.py
-│   ├── Test_find_anagram.py
-│   ├── Test_slap_button.py
-│   └── Test_colors.py
+│   ├── test_calculator.py
+│   ├── test_employee.py
+│   ├── test_find_anagram.py
+│   ├── test_slapping.py
+│   └── test_colors.py
 |
 ├── .gitignore
 |
@@ -49,21 +49,21 @@ Use one of the following commands to execute the tests:
 
 ## Scripts
 
-### 1. Employee.py
+### 1. employee.py
 
-`Employee.py` contains the implementation of a simple `Employee` class with methods such as `give_promotion` and `attribute_length`. This class is designed to manage employee information and explore various object-oriented programming concepts.
+`employee.py` contains the implementation of a simple `Employee` class with methods such as `give_promotion` and `attribute_length`. This class is designed to manage employee information and explore various object-oriented programming concepts.
 
-### 2. Calculator.py
+### 2. calculator.py
 
 `Calculator.py` provides basic calculator functionalities, including arithmetic operations like addition, subtraction, multiplication, and division.
 
-### 3. Find_anagram.py
+### 3. find_anagram.py
 
-`Find_anagram.py` identifies anagrams from a list of words stored in `word_list.txt`. An anagram is a word or phrase formed by rearranging the letters of another word or phrase.
+`find_anagram.py` identifies anagrams from a list of words stored in `word_list.txt`. An anagram is a word or phrase formed by rearranging the letters of another word or phrase.
 
-### 4. Slap_button.py
+### 4. slap_that_like_button.py
 
-`slap_button.py` defines functionality for toggling states (`liked`, `disliked`, and `empty`) using the following:
+`slap_that_like_button.py` defines functionality for toggling states (`liked`, `disliked`, and `empty`) using the following:
 
 - Enum class `LikeState` with states: `empty`, `liked`, and `disliked`.
 - Functions:
@@ -79,7 +79,7 @@ result = slaps_many(state, "lld")  # Applies transitions
 print(result)  # Final state
 ```
 
-### 5. Colors.py
+### 5. colors.py
 
 `colors.py` demonstrates an Enum-based implementation for color management:
 
@@ -102,23 +102,23 @@ Each script includes dedicated test files in the `tests` folder that utilize the
 
 ### Test Files
 
-1. `Test_calculator.py`
-   - Tests functionalities in `Calculator.py`.
+1. `test_calculator.py`
+   - Tests functionalities in `calculator.py`.
    - Ensures arithmetic operations are performed correctly.
 
-2. `Test_employee.py`
-   - Tests methods in `Employee.py`.
+2. `test_employee.py`
+   - Tests methods in `employee.py`.
    - Validates class behavior and data manipulation.
 
-3. `Test_find_anagram.py`
-   - Tests the functionality of `Find_anagram.py`.
+3. `test_find_anagram.py`
+   - Tests the functionality of `find_anagram.py`.
    - Verifies accurate identification of anagrams.
 
-4. `Test_slap_button.py`
-   - Tests state transitions in `slap_button.py`.
+4. `test_slapping.py`
+   - Tests state transitions in `slap_that_like_button.py`.
    - Ensures proper toggling of `liked`, `disliked`, and `empty` states.
 
-5. `Test_colors.py`
+5. `test_colors.py`
    - Tests the functionalities in `colors.py`.
    - Verifies color-to-hex mappings and descriptions.
 
@@ -126,5 +126,5 @@ Each script includes dedicated test files in the `tests` folder that utilize the
 
 ### word_list.txt
 
-`word_list.txt` contains a list of words used as input for `Find_anagram.py` to demonstrate its functionality.
+`word_list.txt` contains a list of words used as input for `find_anagram.py` to demonstrate its functionality.
 
